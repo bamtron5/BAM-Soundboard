@@ -114,18 +114,15 @@ $(window).ready(function(){
                                 var tagged = '<p class="song_title">' + audioTitle3[1] + '</p>';
 				$('div.sound').eq(j).append(tagged);
                                 j++;
-			/*function mycallback() {
-				
-				var tagged = '<p class="song_title">' + ID3.getTag(arr2[j], "title") + "<br><span><i>by: " + ID3.getTag(arr2[j], "artist") + '</i></span>';
-				$('div.sound').eq(j).append(tagged);
-				//console.log('j:' + j);
-				j++;
-				
-				
-			};
-			//console.log('f:' + f);
-			ID3.loadTags(arr2[f], mycallback);*/
+
 		}
 });
+
+
+
+
+
+
+
 
 </script>

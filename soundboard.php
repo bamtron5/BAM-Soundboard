@@ -11,13 +11,25 @@
 <body>
 <?php
 
-	$directory = "audio/";
-	$images = glob($directory . "*.mp3");
+	$dir = "audio/";
+	$directories = glob($dir . "*", GLOB_ONLYDIR);
 	
-	foreach($images as $image)
-	{
-	  echo "<div style='display:none;' class='data'>" . $image 	. "*!" . "</div>";
+	foreach($directories as $directory){
+		$dir_name = explode($dir, $directory);
+		$sounds = glob($directory . "/" . "*.mp3");
+		echo "<div class='directory'><h1>" . $dir_name[1] . "</h1>";
+		foreach($sounds as $sound)
+		{
+		  echo "<div class='data'>" . $sound 	. "*!" . "</div>";
+		}
+		
+		echo "</div>";
+		
 	}
+	
+	
+	
+
 
 ?>
 
@@ -40,41 +52,6 @@
         </table>
         
     </div><!-- END OF container -->
-    
-    
-    	
-      
-      	<script type="text/javascript">
-		$(document).ready(function(){
-			
-			
-			// load screen
-			$('html').prepend('<div class="loading"><h1>LOADING...</h1></div>');					   
-			setTimeout(function(){
-				var k = 0;
-				$('p.song_title').each(function(){
-					var p_html = $(this).html();
-					var new_title = $(this).parent().parent().attr('song');
-					var new_title_s = new_title.split('*!');
-					if(p_html == "null<br><span><i>by: null</i></span>"){
-						$(this).html(new_title_s[0]);
-					} else if (p_html == "undefined<br><span><i>by: undefined</i></span>"){
-						$(this).html(new_title_s[0]);
-					}
-					k++;
-				});
-				$('div.loading').animate({
-				opacity: 0,
-				}, 1000);
-					setTimeout(function(){
-						$('div.loading').css('z-index','-10');
-					}, 1000);	
-			}, 2000);
-			
-		});
-		</script>
-      
-       
-    
+
 </body>
 </html>
