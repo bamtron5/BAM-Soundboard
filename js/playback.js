@@ -1,6 +1,12 @@
 	//Click for sound
 	$('.sound').live("click",function(){
 		
+		//reset everything back to the playbtn
+		$('.sound').each(function(){
+			$(this).find('figure').eq(0).attr('class','playbtn');
+		});
+		
+		
 		//define clicked sound and playing sound
 		var audio_player = $('audio#html5audio');
 		var clicked_sound = $(this).attr('url');
@@ -27,7 +33,7 @@
 			$('div[url^="' + clicked_sound + '"] figure').attr('class','pausebtn');
 		};
 		
-		//LETS COUNT SHALL WE, find out the track time and update the player
+		//LETS COUNT SHALL WE, if the songs over then reset back to the play btn
 		var int = setInterval(function(){
 			var t_playing = $('span#tracktime').text();
 			var d_playing = $('span#durationtml').text();

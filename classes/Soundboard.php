@@ -1,6 +1,17 @@
 <?php
 
 	class Soundboard{
+		//todo
+		//add coundown timer
+		//fix safari layout, test other browsers
+		//when pause, you should replay from time
+		//list playing track at top
+		//play list creator with drag and drop
+		//import spotify playlist?
+		//fade button to stop
+		//space bar pauses
+		//up down volume volume control
+		
 		
 		//pass in the name of your sound directory, instanciate per directory to use multiple folders
 		function getSounds($dir){
